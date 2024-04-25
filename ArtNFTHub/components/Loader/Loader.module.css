@@ -1,0 +1,8 @@
+.Loader {
+    width: 100%;
+    margin-block: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
