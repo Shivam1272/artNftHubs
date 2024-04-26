@@ -78,7 +78,7 @@ const author = () => {
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground2} />
-      <AuthorProfileCard />
+      {/* <AuthorProfileCard /> */}
       <AuthorTaps
         setCollectiables={setCollectiables}
         setCreated={setCreated}
@@ -96,7 +96,7 @@ const author = () => {
         nfts={nfts}
         myNFTs={myNFTs}
       />
-      <Title
+      {/* <Title
         heading="Popular Creators"
         paragraph="Click on music icon and enjoy NTF music or audio"
       />
@@ -106,7 +106,7 @@ const author = () => {
         ))}
       </div>
 
-      <Brand />
+      <Brand /> */}
     </div>
   );
 };

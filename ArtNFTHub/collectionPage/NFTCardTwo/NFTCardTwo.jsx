@@ -6,7 +6,7 @@ import { MdVerified, MdTimer } from "react-icons/md";
 import Link from "next/link";
 //INTERNAL IMPORT
 import Style from "./NFTCardTwo.module.css";
-import { LikeProfile } from "../../components/componentsindex";
+import { LikeProfile, Loader } from "../../components/componentsindex";
 
 const NFTCardTwo = ({ NFTData }) => {
   const [like, setLike] = useState(false);
@@ -22,6 +22,7 @@ const NFTCardTwo = ({ NFTData }) => {
     }
   };
   console.log("NFTData", NFTData);
+  if (!NFTData) return <Loader />;
   return (
     <div className={Style.NFTCardTwo}>
       {NFTData &&
@@ -64,7 +65,7 @@ const NFTCardTwo = ({ NFTData }) => {
 
               <div className={Style.NFTCardTwo_box_price}>
                 <div className={Style.NFTCardTwo_box_price_box}>
-                  <small>Current Bid</small>
+                  <small>Price</small>
                   <p>{el.price} ETH</p>
                 </div>
                 {/* <p className={Style.NFTCardTwo_box_price_stock}>

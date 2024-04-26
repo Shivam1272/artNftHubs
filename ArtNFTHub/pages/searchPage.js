@@ -53,8 +53,8 @@ const searchPage = () => {
       <SearchBar onHandleSeach={onHandleSeach} onClearSearch={onClearSearch} />
       {/* <Filter /> */}
       {nfts?.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
-      <Slider />
-      <Brand />
+      {/* <Slider /> */}
+      {/* <Brand /> */}
     </div>
   );
 };

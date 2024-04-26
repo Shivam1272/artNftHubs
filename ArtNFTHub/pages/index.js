@@ -25,7 +25,7 @@ const Home = () => {
     checkIfWalletConnected();
   }, [currentAccount]);
 
-  const [nfts, setNfts] = useState([]);
+  const [nfts, setNfts] = useState();
   const [nftsCopy, setNftsCopy] = useState([]);
 
   const topCreators = getTopCreators(nfts);
@@ -37,6 +37,7 @@ const Home = () => {
       setNftsCopy(item?.reverse());
     });
   }, []);
+
   return (
     <div className={Style.homePage}>
       <HeroSection />
@@ -52,12 +53,12 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       {nfts?.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-      <Title
+      {/* <Title
         heading="Browse by category"
         paragraph="Explore the NFTs in the most featured categories."
-      />
+      /> */}
       {/* <Category /> */}
-      <Subscribe />
+      {/* <Subscribe /> */}
     </div>
   );
 };

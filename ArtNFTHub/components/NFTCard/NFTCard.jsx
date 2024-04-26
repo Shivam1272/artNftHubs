@@ -6,6 +6,7 @@ import Link from "next/link";
 //INTERNAL IMPORT
 import Style from "./NFTCard.module.css";
 import images from "../../img";
+import { Loader } from "../componentsindex";
 
 const NFTCard = ({ NFTData }) => {
   const CardArray = [
@@ -21,7 +22,7 @@ const NFTCard = ({ NFTData }) => {
   ];
   console.log("NFTData", NFTData);
   if (NFTData === undefined) {
-    return <div>Loading</div>;
+    return <Loader />;
   }
   const [like, setLike] = useState(true);
 
