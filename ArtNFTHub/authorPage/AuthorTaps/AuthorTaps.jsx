@@ -47,28 +47,29 @@ const AuthorTaps = ({
       setFollowing(false);
       setLike(false);
       setActiveBtn(2);
-    } else if (btnText == "Liked") {
-      setCollectiables(false);
-      setCreated(false);
-      setFollower(false);
-      setFollowing(false);
-      setLike(true);
-      setActiveBtn(3);
-    } else if (btnText == "Following") {
-      setCollectiables(false);
-      setCreated(false);
-      setFollower(false);
-      setFollowing(true);
-      setLike(false);
-      setActiveBtn(4);
-    } else if (btnText == "Followers") {
-      setCollectiables(false);
-      setCreated(false);
-      setFollower(true);
-      setFollowing(false);
-      setLike(false);
-      setActiveBtn(5);
     }
+    // else if (btnText == "Liked") {
+    //   setCollectiables(false);
+    //   setCreated(false);
+    //   setFollower(false);
+    //   setFollowing(false);
+    //   setLike(true);
+    //   setActiveBtn(3);
+    // } else if (btnText == "Following") {
+    //   setCollectiables(false);
+    //   setCreated(false);
+    //   setFollower(false);
+    //   setFollowing(true);
+    //   setLike(false);
+    //   setActiveBtn(4);
+    // } else if (btnText == "Followers") {
+    //   setCollectiables(false);
+    //   setCreated(false);
+    //   setFollower(true);
+    //   setFollowing(false);
+    //   setLike(false);
+    //   setActiveBtn(5);
+    // }
   };
 
   return (
@@ -88,7 +89,7 @@ const AuthorTaps = ({
             >
               Own NFT
             </button>
-            <button
+            {/* <button
               className={`${activeBtn == 3 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
             >
@@ -105,7 +106,7 @@ const AuthorTaps = ({
               onClick={(e) => openTab(e)}
             >
               Followers
-            </button>
+            </button> */}
           </div>
         </div>
 

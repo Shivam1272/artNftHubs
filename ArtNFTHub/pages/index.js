@@ -5,7 +5,6 @@ import Style from "../styles/index.module.css";
 import {
   HeroSection,
   Service,
-  BigNFTSilder,
   Subscribe,
   Title,
   Category,
@@ -42,7 +41,7 @@ const Home = () => {
     <div className={Style.homePage}>
       <HeroSection />
       <Service />
-      <BigNFTSilder />
+      {/* <BigNFTSilder /> */}
       {topCreators.length == 0 ? (
         <Loader />
       ) : (
@@ -57,7 +56,7 @@ const Home = () => {
         heading="Browse by category"
         paragraph="Explore the NFTs in the most featured categories."
       />
-      <Category />
+      {/* <Category /> */}
       <Subscribe />
     </div>
   );
