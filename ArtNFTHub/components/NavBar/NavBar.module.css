@@ -54,7 +54,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr .3fr;
     gap: 1rem;
-    align-items: center;
+    align-items: end;
     /* align-self: flex-end; */
 }
 
@@ -138,11 +138,12 @@
     }
 
     .navbar_container_right{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .navbar_container_right_menuBtn{
         display: block;
+        margin-left: auto;
     }
 
     .navbar_container_left_box_input_box{

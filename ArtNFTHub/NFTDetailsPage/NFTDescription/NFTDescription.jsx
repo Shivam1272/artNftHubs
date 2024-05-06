@@ -140,7 +140,7 @@ const NFTDescription = ({ nft }) => {
             {social && (
               <div className={Style.NFTDescription_box_share_box_social}>
                 <a href="#">
-                  <TiSocialFacebook /> Facebooke
+                  <TiSocialFacebook /> Facebook
                 </a>
                 <a href="#">
                   <TiSocialInstagram /> Instragram
@@ -197,14 +197,12 @@ const NFTDescription = ({ nft }) => {
               <div className={Style.NFTDescription_box_profile_box_left_info}>
                 <small>Creator</small> <br />
                 <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
-                  <span>
-                    {seller?.username || nft.seller.slice(0, 9)} <MdVerified />
-                  </span>
+                  <span>{seller?.username || nft.seller}</span>
                 </Link>
               </div>
             </div>
 
-            <div className={Style.NFTDescription_box_profile_box_right}>
+            {/* <div className={Style.NFTDescription_box_profile_box_right}>
               <Image
                 src={images.creatorbackground1}
                 alt="profile"
@@ -219,7 +217,7 @@ const NFTDescription = ({ nft }) => {
                   Monkey Champ <MdVerified />
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className={Style.NFTDescription_box_profile_biding}>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GrClose } from "react-icons/gr";
@@ -10,12 +9,10 @@ import {
   TiSocialYoutube,
   TiSocialInstagram,
   TiArrowSortedDown,
-  TiArrowSortedUp,
 } from "react-icons/ti";
 
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
-import images from "../../../img";
 import Button from "../../Button/Button";
 
 const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
@@ -26,55 +23,31 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   //--------DISCOVER NAVIGATION MENU
   const discover = [
     {
-      name: "Collection",
-      link: "collection",
-    },
-    {
       name: "Search",
-      link: "search",
+      link: "searchPage",
     },
     {
-      name: "Author Profile",
-      link: "author-profile",
-    },
-    {
-      name: "NFT Details",
-      link: "NFT-details",
+      name: "My NFT",
+      link: "my-nft",
     },
     {
       name: "Account Setting",
-      link: "account-setting",
+      link: "account",
     },
     {
-      name: "Connect Wallet",
-      link: "connect-wallet",
-    },
-    {
-      name: "Blog",
-      link: "blog",
+      name: "Upload NFT",
+      link: "uploadNFT",
     },
   ];
   //------HELP CNTEER
   const helpCenter = [
     {
       name: "About",
-      link: "about",
+      link: "aboutus",
     },
     {
       name: "Contact Us",
-      link: "contact-us",
-    },
-    {
-      name: "Sign Up",
-      link: "sign-up",
-    },
-    {
-      name: "Sign In",
-      link: "sign-in",
-    },
-    {
-      name: "Subscription",
-      link: "subscription",
+      link: "contactus",
     },
   ];
 
@@ -100,14 +73,21 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
 
   return (
     <div className={Style.sideBar}>
-      <GrClose
-        className={Style.sideBar_closeBtn}
-        onClick={() => closeSideBar()}
-      />
-
       <div className={Style.sideBar_box}>
-        <Image src={images.logo} alt="logo" width={150} height={150} />
-        <p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Link href="/">ArtNFTHub</Link>
+          <GrClose
+            className={Style.sideBar_closeBtn}
+            onClick={() => closeSideBar()}
+          />
+        </div>
+        <p style={{ marginTop: "3rem" }}>
           Discover the most outstanding articles on all topices of NFT & write
           your own stories and share them
         </p>
@@ -181,7 +161,6 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
             handleClick={() => router.push("/uploadNFT")}
           />
         )}
-        <Button btnName="Connect" handleClick={() => connectWallet()} />
       </div>
     </div>
   );

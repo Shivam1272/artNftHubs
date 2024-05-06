@@ -1,114 +1,52 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { useRouter } from "next/router";
 //INTERNAL IMPORT
 import Style from "./AuthorNFTCardBox.module.css";
-import images from "../../img";
 import { NFTCardTwo } from "../../collectionPage/collectionIndex";
-import FollowerTabCard from "../../components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import { Button } from "../../components/componentsindex";
 
-const AuthorNFTCardBox = ({
-  collectiables,
-  created,
-  like,
-  follower,
-  following,
-  nfts, 
-  myNFTs
-}) => {
-  // const collectiablesArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  // ];
+const AuthorNFTCardBox = ({ collectiables, created, nfts, myNFTs }) => {
+  const router = useRouter(); // Using the useRouter hook to get the router object
 
-  // const createdArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  // ];
+  // Function to handle redirection to uploadNFT page
+  const redirectToUpload = () => {
+    router.push("/uploadNFT");
+  };
 
-  const likeArray = [
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-  ];
+  // Function to handle redirection to buy page
+  const redirectToBuy = () => {
+    router.push("/searchPage"); // Modify as needed to match the correct route
+  };
 
-  const followerArray = [
-    {
-      background: images.creatorbackground1,
-      user: images.user1,
-    },
-    {
-      background: images.creatorbackground2,
-      user: images.user2,
-    },
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-    },
-  ];
-
-  const followingArray = [
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-    },
-    {
-      background: images.creatorbackground1,
-      user: images.user1,
-    },
-  ];
   return (
     <div className={Style.AuthorNFTCardBox}>
-      {collectiables && <NFTCardTwo NFTData={nfts} />}
-      {created && <NFTCardTwo NFTData={myNFTs} />}
-      {like && <NFTCardTwo NFTData={likeArray} />}
-      {follower && (
-        <div className={Style.AuthorNFTCardBox_box}>
-          {followerArray.map((el, i) => (
-            <FollowerTabCard key={i+1} i={i} el={el} />
-          ))}
-        </div>
-      )}
-      {following && (
-        <div className={Style.AuthorNFTCardBox_box}>
-          {followingArray.map((el, i) => (
-            <FollowerTabCard key={i+1} i={i} el={el} />
-          ))}
-        </div>
-      )}
+      {collectiables &&
+        (nfts.length > 0 ? (
+          <NFTCardTwo NFTData={nfts} />
+        ) : (
+          <div>
+            <h3>No NFT Listed..</h3>
+            <Button
+              btnName="Create NFT"
+              handleClick={redirectToUpload}
+              classStyle={Style.upload_box_btn_style}
+            />
+          </div>
+        ))}
+
+      {created &&
+        (myNFTs.length > 0 ? (
+          <NFTCardTwo NFTData={myNFTs} />
+        ) : (
+          <div>
+            <h3>You Don't Own any NFT</h3>
+            <Button
+              btnName="Buy NFT"
+              handleClick={redirectToBuy}
+              classStyle={Style.upload_box_btn_style}
+            />
+          </div>
+        ))}
     </div>
   );
 };

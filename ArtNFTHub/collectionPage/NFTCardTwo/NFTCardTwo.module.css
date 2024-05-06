@@ -16,6 +16,7 @@
 }
 
 .NFTCardTwo_box:hover{
+    border-style: solid;
     box-shadow: var(--box-shadow);
 }
 

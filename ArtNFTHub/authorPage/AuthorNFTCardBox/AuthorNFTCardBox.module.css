@@ -2,15 +2,43 @@
 .AuthorNFTCardBox{
     width: 100%;
     margin-bottom: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .AuthorNFTCardBox_box{
     width: 80%;
     margin:  0 auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+}
+
+.AuthorNFTCardBox_link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: var(--icons-color);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.AuthorNFTCardBox_link:hover,
+.AuthorNFTCardBox_link:focus {
+    background-color: #0056b3;
+    color: #ffffff;
+    text-decoration: none;
+    outline: none;
+}
+
+.AuthorNFTCardBox_link:active {
+    background-color: #004085;
+    transform: translateY(2px);
 }
 
 @media screen and (max-width: 35em) {

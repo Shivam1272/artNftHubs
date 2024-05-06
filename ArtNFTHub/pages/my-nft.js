@@ -15,44 +15,8 @@ import {
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const author = () => {
-  const followerArray = [
-    {
-      background: images.creatorbackground1,
-      user: images.user1,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-    {
-      background: images.creatorbackground2,
-      user: images.user2,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-      seller: "0xadhdbjnmdhdjndqhewnbmndwedjebnm",
-    },
-  ];
-
   const [collectiables, setCollectiables] = useState(true);
   const [created, setCreated] = useState(false);
-  const [like, setLike] = useState(false);
-  const [follower, setFollower] = useState(false);
-  const [following, setFollowing] = useState(false);
 
   const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
     NFTMarketplaceContext
@@ -73,40 +37,20 @@ const author = () => {
       setMyNFTs(item);
     });
   }, []);
-  console.log("owned1", myNFTs);
-  console.log("Listed1", nfts);
+  // console.log("owned1", myNFTs);
+  // console.log("Listed1", nfts);
   return (
     <div className={Style.author}>
       <Banner bannerImage={images.creatorbackground2} />
       {/* <AuthorProfileCard /> */}
-      <AuthorTaps
-        setCollectiables={setCollectiables}
-        setCreated={setCreated}
-        setLike={setLike}
-        setFollower={setFollower}
-        setFollowing={setFollowing}
-      />
+      <AuthorTaps setCollectiables={setCollectiables} setCreated={setCreated} />
 
       <AuthorNFTCardBox
         collectiables={collectiables}
         created={created}
-        like={like}
-        follower={follower}
-        following={following}
         nfts={nfts}
         myNFTs={myNFTs}
       />
-      {/* <Title
-        heading="Popular Creators"
-        paragraph="Click on music icon and enjoy NTF music or audio"
-      />
-      <div className={Style.author_box}>
-        {followerArray.map((el, i) => (
-          <FollowerTabCard key={i} i={i} el={el} />
-        ))}
-      </div>
-
-      <Brand /> */}
     </div>
   );
 };

@@ -141,7 +141,7 @@ contract NFTMarketplace is ERC721URIStorage {
 
         payable(owner).transfer(listingPrice);
         payable(idMarketItem[tokenId].seller).transfer(msg.value);
-        idMarketItem[tokenId].seller = payable(address(0)); // NFT not belongs to contract
+        idMarketItem[tokenId].seller = payable(address(msg.sender)); // NFT not belongs to contract
     }
 
     // GETTING UNSOLD NFT DATA

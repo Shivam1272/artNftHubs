@@ -45,8 +45,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
       if (accounts.length) {
         setcurrentAccount(accounts[0]);
       } else {
-        setError("No Account Found");
-        setOpenError(true);
+        // setError("No Account Found");
+        // setOpenError(true);
       }
     } catch (error) {
       setError("Somenthing wrong while connectimg to wallet");
@@ -255,7 +255,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
       const tran = await transaction.wait();
       // console.log("buying NFT tran", tran);
-      router.push("/author");
+      router.push("/my-nft");
     } catch (error) {
       console.log("Buy NFT Error", error);
       setError("Error while Buying NFTs.");

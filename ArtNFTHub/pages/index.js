@@ -53,12 +53,6 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life."
       />
       {nfts?.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-      {/* <Title
-        heading="Browse by category"
-        paragraph="Explore the NFTs in the most featured categories."
-      /> */}
-      {/* <Category /> */}
-      {/* <Subscribe /> */}
     </div>
   );
 };

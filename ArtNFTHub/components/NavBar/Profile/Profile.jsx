@@ -22,7 +22,7 @@ const Profile = ({ currentAccount }) => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Shivam Bhai</p>
+          <p>Welcome, {currentAccount.slice(0, 3)}</p>
           <small>{currentAccount.slice(0, 18)}</small>
         </div>
       </div>
@@ -32,13 +32,13 @@ const Profile = ({ currentAccount }) => {
           <div className={Style.profile_menu_one_item}>
             <FaUserAlt />
             <p>
-              <Link href={{ pathname: "/author" }}>My Profile</Link>
+              <Link href={{ pathname: "/my-nft" }}>My Profile</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <FaRegImage />
             <p>
-              <Link href={{ pathname: "/author" }}>My Items</Link>
+              <Link href={{ pathname: "/my-nft" }}>My Items</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>

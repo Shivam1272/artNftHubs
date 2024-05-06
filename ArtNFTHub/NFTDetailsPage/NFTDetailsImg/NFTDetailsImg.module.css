@@ -20,6 +20,7 @@
 .NFTDetailsImg_box_NFT_like{
     display: flex;
     align-items: center;
+    padding-top: 7px;
     justify-content: space-between;
     grid-column: 1 / -1;
     grid-row: 1 / end;

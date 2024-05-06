@@ -76,12 +76,6 @@ const DropZone = ({
                   {name || ""}
                 </p>
               </div>
-              {/* <div className={Style.DropZone_box_aside_box_preview_three}>
-                <p>
-                  <span>Website:</span>
-                  {website || ""}
-                </p>
-              </div> */}
 
               <div className={Style.DropZone_box_aside_box_preview_one}>
                 <p>
@@ -91,22 +85,6 @@ const DropZone = ({
               </div>
 
               <div className={Style.DropZone_box_aside_box_preview_three}>
-                <p>
-                  <span>Royalties</span>
-                  {royalties || ""}
-                </p>
-                {/* <p>
-                  <span>FileSize</span>
-                  {fileSize || ""}
-                </p> */}
-                <p>
-                  <span>Properties</span>
-                  {properties || ""}
-                </p>
-                <p>
-                  <span>Category</span>
-                  {category || ""}
-                </p>
                 <p>
                   <span>Price</span>
                   {price || ""}
